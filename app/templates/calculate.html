@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="header">
+        <h1>Mortgage Calculator for you Shona</h1>
+    </div>
+    <form action="" method="post" novalidate>
+        <div class="input">
+            <p>
+                {{ form.loan_amount.label }}<br>
+                {{ form.loan_amount(size=20) }}
+            </p>
+            <p>
+                {{ form.interest_rate.label }}<br>
+                {{ form.interest_rate(size=20) }}
+                <label>In %</label>
+            </p>
+            <p>
+                {{ form.down_payment.label }}<br>
+                {{ form.down_payment(size=20) }}
+            </p>
+            <p>
+                {{ form.property_taxes.label }}<br>
+                {{ form.property_taxes(size=20) }}
+                <label>Monthly</label>
+            </p>
+            <p>
+                {{ form.hoa.label }}<br>
+                {{ form.hoa(size=20) }}
+                <label>Monthly</label>
+            </p>
+            <p>{{ form.submit() }}</p>
+            <div class="pmi">
+                <label>Monthly Payment</label>
+                <p>{{ pmi }}</p>
+            </div>
+        </div>
+        <div class="table">
+
+            {% if tables %}
+                {% for table in tables %}
+                    {{ table|safe }}
+                {% endfor %}
+            {% endif %}
+    </div>
+    </form>
+{% endblock %}

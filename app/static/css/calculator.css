@@ -1,0 +1,58 @@
+.header {
+  background-color: #6a437e;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+
+}
+
+.body {
+  margin: 0 auto;
+  padding: 0.5rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+} 
+
+.input {
+  width: 20%;
+  padding: 10px;
+  float: left;
+}
+
+.table {
+  border-spacing: 0px;
+  border:0px solid rgb(57, 174, 241);
+  border-collapse: collapse;
+  width: 50%;
+  padding: 5px;
+}
+
+.table th {
+  border-color: #1B7AE0;
+  text-align: center;
+  border-collapse: collapse;
+  border:1px;
+  border-spacing: 0px;
+
+}
+
+.table td {
+  text-align: center;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  border:0px
+}
+.table tr {
+  text-align: center;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+
+.pmi {
+  width: 40%;
+  float: left;
+  background-color: #147ba0;
+  color: #ffffff;
+  font-size: large;
+  text-align: center;
+}
