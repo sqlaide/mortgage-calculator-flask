@@ -13,7 +13,7 @@
             <p>
                 {{ form.interest_rate.label }}<br>
                 {{ form.interest_rate(size=20) }}
-                <label>In %</label>
+                <label> %</label>
             </p>
             <p>
                 {{ form.down_payment.label }}<br>
@@ -29,6 +29,8 @@
                 {{ form.hoa(size=20) }}
                 <label>Monthly</label>
             </p>
+                {{ form.start_date.label }}<br>
+                {{ form.start_date(size=20) }}
             <p>{{ form.submit() }}</p>
             <div class="pmi">
                 <label>Monthly Payment</label>

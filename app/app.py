@@ -18,7 +18,7 @@ def calculate():
     form.validate_on_submit()
     if request.method == "POST":
         calculator = MortgageCalculator(loan_amount=form.loan_amount.data, interest_rate=form.interest_rate.data,
-                                        down_payment=form.down_payment.data, property_taxes=form.property_taxes.data, hoa=form.hoa.data)
+                                        down_payment=form.down_payment.data, property_taxes=form.property_taxes.data, hoa=form.hoa.data, start_date=form.start_date.data)
         schedule = calculator.amortization_table()
         pmi = calculator.monthly_payment()
 

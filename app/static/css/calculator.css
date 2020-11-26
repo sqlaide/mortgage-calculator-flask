@@ -20,32 +20,27 @@
 }
 
 .table {
-  border-spacing: 0px;
-  border:0px solid rgb(57, 174, 241);
-  border-collapse: collapse;
-  width: 50%;
-  padding: 5px;
+  border-spacing: 50px 0;
+  border-collapse: separate;
+  padding-top: 20px;
 }
 
 .table th {
-  border-color: #1B7AE0;
+  border-color: transparent;
   text-align: center;
-  border-collapse: collapse;
-  border:1px;
-  border-spacing: 0px;
-
+  font-family: sans-serif;
+  color: #452455;
 }
 
-.table td {
+.table td{
+  /* width: 100%; */
   text-align: center;
-  border-spacing: 0px;
-  border-collapse: collapse;
-  border:0px
+  width: 100px;
+  border: 0px;
 }
+
 .table tr {
-  text-align: center;
-  border-spacing: 0px;
-  border-collapse: collapse;
+  border: 0px;
 }
 
 .pmi {
