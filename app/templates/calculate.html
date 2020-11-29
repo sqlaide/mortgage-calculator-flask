@@ -4,46 +4,56 @@
     <div class="header">
         <h1>Mortgage Calculator</h1>
     </div>
-    <form action="" method="post" novalidate>
+    <form action="" method="post">
         <div class="input">
-            <p>
+            <div>
                 {{ form.loan_amount.label }}<br>
                 {{ form.loan_amount(size=20) }}
-            </p>
+                <p>
+                    {{ form.tax_rate.label }}<br>
+                    {{ form.tax_rate(size=5) }}
+                    <label> %</label>
+                </p>
+                {% if property_taxes %}
+                    <label>Monthly Property Taxes: </label>
+                    {{ property_taxes }}
+                {% endif %}
+            </div>
             <p>
                 {{ form.interest_rate.label }}<br>
-                {{ form.interest_rate(size=20) }}
-                <label> %</label>
+                {{ form.interest_rate(size=5) }}
+                <label> %</label><br>
+                
             </p>
             <p>
                 {{ form.down_payment.label }}<br>
                 {{ form.down_payment(size=20) }}
             </p>
             <p>
-                {{ form.property_taxes.label }}<br>
-                {{ form.property_taxes(size=20) }}
+                {{ form.hoa.label }}<br>
+                {{ form.hoa(size=20) }}
                 <label>Monthly</label>
             </p>
             <p>
-                {{ form.hoa.label }}<br>
-                {{ form.hoa(size=20) }}
+                {{ form.home_ins.label }}<br>
+                {{ form.home_ins(size=20) }}
                 <label>Monthly</label>
             </p>
                 {{ form.start_date.label }}<br>
                 {{ form.start_date(size=20) }}
             <p>{{ form.submit() }}</p>
             <div class="pmi">
-                <label>Monthly Payment</label>
+                <label>Total Monthly Payment</label>
                 <p>{{ pmi }}</p>
+
             </div>
         </div>
         <div class="table">
-
             {% if tables %}
                 {% for table in tables %}
                     {{ table|safe }}
                 {% endfor %}
             {% endif %}
-    </div>
+        </div>
     </form>
 {% endblock %}

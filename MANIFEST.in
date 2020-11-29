@@ -1,0 +1,3 @@
+graft mortgage-calculator-flask/static
+graft mortgage-calculator-flask/templates
+global-exclude *.pyc

@@ -13,9 +13,8 @@ class MortgageCalculator:
         loan_amount: float,
         interest_rate: float,
         down_payment: Optional[float],
-        hoa: Optional[float],
-        tax_rate: Optional[float],
-        home_ins: Optional[float],
+        hoa: Optional[int],
+        property_taxes: Optional[float],
         start_date: Optional[datetime],
         period: int = 360,
     ) -> None:
@@ -25,12 +24,10 @@ class MortgageCalculator:
         self.loan_amount = loan_amount
         self.period = period
         self.n_periods = np.arange(self.period) + 1
-        self.tax_rate = tax_rate
+        self.property_taxes = property_taxes
         self.hoa = hoa
         self.n_period_months = None
         self.start_date = start_date or datetime.today().strftime("%Y-%m-%d")
-        self.home_ins = home_ins
-        self.__house_price = loan_amount
 
     @property
     def interest_rate(self):
@@ -96,20 +93,10 @@ class MortgageCalculator:
             self.interest_rate, self.n_periods, self.period, self.loan_amount
         )
 
-    def property_taxes(self):
-        if self.tax_rate:
-            property_taxes = (self.tax_rate/100.0) * self.__house_price
-            return property_taxes/12.0
-        else:
-            return 0
-
     def monthly_payment(self):
         pmi = npf.pmt(self.interest_rate, self.period, self.loan_amount)
-        if self.tax_rate:
-            property_taxes = self.property_taxes()
-            pmi += property_taxes
+        if self.property_taxes:
+            pmi += self.property_taxes
         if self.hoa:
             pmi += self.hoa
-        if self.home_ins:
-            pmi += self.home_ins
         return "${:,.2f}".format(pmi)

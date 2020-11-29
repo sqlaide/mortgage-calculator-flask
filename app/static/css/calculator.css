@@ -17,30 +17,35 @@
   width: 20%;
   padding: 10px;
   float: left;
+  font-family: sans-serif;
 }
 
-.table {
-  border-spacing: 50px 0;
-  border-collapse: separate;
+table {
+  /* border-spacing: 50px 0; */
+  border: none;
   padding-top: 20px;
+  width: 60%;
+  float: center;
 }
 
-.table th {
-  border-color: transparent;
+table th {
   text-align: center;
   font-family: sans-serif;
-  color: #452455;
+  color: whitesmoke;
+  background-color: rgb(51, 78, 87);
+  border: none;
 }
 
-.table td{
+table td{  
   /* width: 100%; */
   text-align: center;
   width: 100px;
-  border: 0px;
+  border: none;
 }
 
-.table tr {
-  border: 0px;
+table tr {
+  border: none;
+  font-family: sans-serif;
 }
 
 .pmi {

@@ -20,21 +20,18 @@ def calculate():
             loan_amount=form.loan_amount.data,
             interest_rate=form.interest_rate.data,
             down_payment=form.down_payment.data,
-            tax_rate=form.tax_rate.data,
+            property_taxes=form.property_taxes.data,
             hoa=form.hoa.data,
-            home_ins=form.home_ins.data,
             start_date=form.start_date.data,
         )
         schedule = calculator.amortization_table()
         pmi = calculator.monthly_payment()
-        property_taxes = calculator.property_taxes()
 
         return render_template(
             "calculate.html",
             title="Mortgage Calculator",
             form=form,
             pmi=pmi,
-            property_taxes="${:,.2f}".format(property_taxes),
             tables=[
                 schedule.to_html(
                     classes=".table",
@@ -50,7 +47,6 @@ def calculate():
             title="Mortgage Calculator",
             pmi=None,
             tables=None,
-            property_taxes=None,
             form=form,
         )
 
